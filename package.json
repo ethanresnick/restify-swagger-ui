@@ -1,6 +1,6 @@
 {
   "name": "restify-swagger-ui",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Serves Swagger UI from Restify",
   "main": "./lib/index.js",
   "files": [
@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "@types/node": "^14.6.4",
-    "@types/restify": "^8.4.2",
     "@types/serialize-javascript": "^4.0.0",
     "@types/swagger-ui-dist": "^3.30.0",
     "serialize-javascript": "^5.0.0",
@@ -37,11 +36,13 @@
     "es6-shim": "0.35.2",
     "mocha": "2.2.5",
     "prettier": "^2.1.1",
-    "restify": "8.0.0",
+    "restify": "^8.0.0",
+    "@types/restify": "^8.0.0",
     "typescript": "^4.0.2"
   },
   "peerDependencies": {
-    "restify": ">5.x"
+    "restify": ">5.x",
+    "@types/restify": ">5.x"
   },
   "author": {
     "name": "Ethan Resnick",
