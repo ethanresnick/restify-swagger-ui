@@ -1,17 +1,17 @@
 {
-  "name": "swagger-ui-restify",
-  "version": "4.0.2",
-  "description": "Swagger UI Restify",
+  "name": "restify-swagger-ui",
+  "version": "5.0.0",
+  "description": "Serves Swagger UI from Restify",
   "main": "./lib/index.js",
   "files": [
-    "package.json",
-    "index.js",
-    "indexTemplate.html.tpl",
-    "swagger-ui-init.js.tpl",
+    "lib",
     "LICENSE"
   ],
   "scripts": {
-    "test": "./node_modules/.bin/mocha test"
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "postbuild": "copyfiles ./*.tpl ./lib",
+    "test": "echo TODO: rewrite tests w/o phantom"
   },
   "keywords": [
     "swagger",
@@ -22,29 +22,39 @@
   ],
   "private": false,
   "engines": {
-    "node": ">= v6.9.1"
+    "node": ">= v12.9.1"
   },
   "dependencies": {
+    "@types/node": "^14.6.4",
+    "@types/restify": "^8.4.2",
+    "@types/serialize-javascript": "^4.0.0",
+    "@types/swagger-ui-dist": "^3.30.0",
+    "serialize-javascript": "^5.0.0",
     "swagger-ui-dist": "^3.18.1"
   },
   "devDependencies": {
+    "copyfiles": "^2.3.0",
     "es6-shim": "0.35.2",
-    "restify": "5.0.0",
     "mocha": "2.2.5",
-    "phantom": "2.1.21"
+    "prettier": "^2.1.1",
+    "restify": "8.0.0",
+    "typescript": "^4.0.2"
+  },
+  "peerDependencies": {
+    "restify": ">5.x"
   },
   "author": {
-    "name": "Brad van der Laan",
-    "email": "brad.vanderlaan@gmail.com"
+    "name": "Ethan Resnick",
+    "email": "ethan.resnick@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bvanderlaan/swagger-ui-restify.git"
+    "url": "git@github.com:ethanresnick/restify-swagger-ui.git"
   },
   "license": "MIT",
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/bvanderlaan/swagger-ui-restify/issues"
+    "url": "https://github.com/ethanresnick/restify-swagger-ui/issues"
   },
-  "homepage": "https://github.com/bvanderlaan/swagger-ui-restify"
+  "homepage": "https://github.com/ethanresnick/restify-swagger-ui"
 }
